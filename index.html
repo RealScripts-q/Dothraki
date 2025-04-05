@@ -6,21 +6,49 @@
   <title>English → Dothraki Translator</title>
   <style>
     body { font-family: sans-serif; background: #111; color: #eee; padding: 30px; }
-    input, button { padding: 10px; font-size: 18px; }
-    .result { margin-top: 20px; font-size: 24px; color: #80ff80; }
+    .container { display: flex; }
+    .column { width: 50%; padding: 20px; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 8px 12px; border: 1px solid #444; text-align: center; }
+    th { background-color: #333; color: #fff; }
+    td { background-color: #222; }
   </style>
 </head>
 <body>
 
-  <h1>English → Dothraki Translator</h1>
-  <input id="input" placeholder="Enter English word..." />
-  <button id="translateBtn">Translate</button>
-
-  <div class="result" id="output"></div>
+  <h1>English → Dothraki Dictionary</h1>
+  
+  <div class="container">
+    <!-- English Column -->
+    <div class="column">
+      <h2>English</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>English Word</th>
+          </tr>
+        </thead>
+        <tbody id="englishWords"></tbody>
+      </table>
+    </div>
+    
+    <!-- Dothraki Column -->
+    <div class="column">
+      <h2>Dothraki</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dothraki Translation</th>
+          </tr>
+        </thead>
+        <tbody id="dothrakiWords"></tbody>
+      </table>
+    </div>
+  </div>
 
   <script>
     const dictionary = {
-      // Basic Conversational Words
       "hello": "Torvæk",
       "hi": "Torvæk",  // Slang version for "hello"
       "goodbye": "Nekrûn",
@@ -143,20 +171,33 @@
       "speak": "Varta",
       "show": "Lorna",
       "don't": "Ŋeh'th", // Informal/slang for "do not"
-      "do not": "Ŋeh'th"  // Long form for "don't"
+      "do not": "Ŋeh'th",  // Long form for "don't"
     };
 
-    // Define the translate function
-    function translate() {
-      const input = document.getElementById("input").value.toLowerCase();
-      const output = dictionary[input] || "No Dothraki translation found.";
-      
-      // Display the result on the page
-      document.getElementById("output").textContent = output;
+    // Populate the tables with English and Dothraki words
+    function populateTables() {
+      const englishWords = document.getElementById("englishWords");
+      const dothrakiWords = document.getElementById("dothrakiWords");
+
+      for (const [english, dothraki] of Object.entries(dictionary)) {
+        const row1 = document.createElement("tr");
+        const row2 = document.createElement("tr");
+
+        const cell1 = document.createElement("td");
+        cell1.textContent = english;
+        const cell2 = document.createElement("td");
+        cell2.textContent = dothraki;
+
+        row1.appendChild(cell1);
+        row2.appendChild(cell2);
+
+        englishWords.appendChild(row1);
+        dothrakiWords.appendChild(row2);
+      }
     }
 
-    // Add event listener to the button
-    document.getElementById("translateBtn").addEventListener("click", translate);
+    // Call the populateTables function when the page loads
+    window.onload = populateTables;
   </script>
 
 </body>
