@@ -158,7 +158,7 @@
       "gaming": "Kravata",
       "afk": "Darak vekhat", // AFK slang
       "brb": "Rhaeshisar", // Be right back
-      "gg": "Rhaeshisar ma" // Good game
+      "gg": "Rhaeshisar ma", // Good game
       "rage": "Ruvak",
       "camping": "Rhaeshisar vetza", // Slang for camping in a game
       "lag": "Vekhat mae",
@@ -184,6 +184,7 @@
       const englishWords = document.getElementById("englishWords");
       const dothrakiWords = document.getElementById("dothrakiWords");
 
+      // Loop through the dictionary and create table rows
       for (const [english, dothraki] of Object.entries(dictionary)) {
         const row1 = document.createElement("tr");
         const row2 = document.createElement("tr");
