@@ -192,6 +192,8 @@
     function translate() {
       const input = document.getElementById("input").value.toLowerCase();
       const output = dictionary[input] || "No Dothraki translation found.";
+      
+      // Display the result on the page, not in the console
       document.getElementById("output").textContent = output;
     }
   </script>
