@@ -13,6 +13,9 @@
     th, td { padding: 8px 12px; border: 1px solid #444; text-align: center; }
     th { background-color: #333; color: #fff; }
     td { background-color: #222; }
+    .alphabet { margin-top: 40px; }
+    .alphabet h2 { text-align: center; }
+    .alphabet p { text-align: center; }
   </style>
 </head>
 <body>
@@ -45,6 +48,12 @@
         <tbody id="dothrakiWords"></tbody>
       </table>
     </div>
+  </div>
+
+  <div class="alphabet">
+    <h2>Dothraki Alphabet</h2>
+    <p>Here is the Dothraki alphabet:</p>
+    <p>A, B, Ch, D, E, F, G, H, I, J, K, L, M, N, O, P, R, S, Š, T, U, V, W, Z, Ž</p>
   </div>
 
   <script>
@@ -118,7 +127,6 @@
       "chill": "Rhaeshisar mae",
       "mad": "Vezhven mae",
       "excuse me": "Vekhat mae",
-      "sorry": "M'zekha",
       "please help me": "Vrekai, vekhat mae",
       "thank you very much": "Vrasha mae vrekai",
       "I don't know": "Vekhat mae mae",
@@ -156,27 +164,49 @@
       "understand": "Vekhat",
       "know": "Vekhat",
       "gaming": "Kravata",
-      "afk": "Darak vekhat", // AFK slang
-      "brb": "Rhaeshisar", // Be right back
-      "gg": "Rhaeshisar ma", // Good game
+      "afk": "Darak vekhat", 
+      "brb": "Rhaeshisar", 
+      "gg": "Rhaeshisar ma", 
       "rage": "Ruvak",
-      "camping": "Rhaeshisar vetza", // Slang for camping in a game
+      "camping": "Rhaeshisar vetza", 
       "lag": "Vekhat mae",
       "disconnect": "Vekhat mae",
       "headshot": "Torvâh",
       "noob": "Laro vekhat",
       "easy": "Vezho",
-      "glhf": "Vezhve",  // Good luck, have fun
-      "flank": "Rhaeshisar vekhat mae",  // Side attack
+      "glhf": "Vezhve", 
+      "flank": "Rhaeshisar vekhat mae",  
       "lagging": "Ruvak",
-      "no scope": "Lohta mae", // No scope shot in games
+      "no scope": "Lohta mae", 
       "chill out": "Rhaeshisar mae",
       "cool down": "Vekhat mae",
       "sorry bro": "M'zekha, Rhaeshisar",
       "it's okay": "Vezhven mae",
       "excuse me, my bad": "Vekhat mae, vekhat mae",
       "good game": "Rhaeshisar ma",
-      "ggwp": "Rhaeshisar ma vekhat"
+      "ggwp": "Rhaeshisar ma vekhat",
+      "badass": "Korvazh", 
+      "fuck": "Krazh", 
+      "shit": "Ruva", 
+      "asshole": "Zerthar", 
+      "bitch": "Vethar", 
+      "bastard": "Ruvok", 
+      // Names with unique Dothraki translations
+      "joki": "Vokir", 
+      "uriel": "Urel", 
+      "joe": "Jorath", 
+      "sun": "Solara", 
+      "nourance": "Naurik", 
+      "nourane": "Naura", 
+      "john": "Jarek", 
+      "mary": "Mara", 
+      "michael": "Mikal", 
+      "susan": "Suna", 
+      "james": "Jorah", 
+      "emily": "Emira", 
+      "david": "Davon", 
+      "lisa": "Liora", 
+      "robert": "Rovan"
     };
 
     // Populate the tables with English and Dothraki words
@@ -202,8 +232,7 @@
       }
     }
 
-    // Call the populateTables function when the page loads
-    window.onload = populateTables;
+    populateTables();
   </script>
 
 </body>
